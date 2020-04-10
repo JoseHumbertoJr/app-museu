@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(Splash());
+void main() => runApp(Splash_end());
 
-class Splash extends StatelessWidget {
+class Splash_end extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -31,54 +31,86 @@ class Splash extends StatelessWidget {
                           children: <Widget>[
                             Container(
                               color: Colors.transparent,
-                                width: 200,
-                                height: 360,
+                                width: 250,
+                                height: 300,
                                 padding: const EdgeInsets.all(10.0),
                                 alignment:  Alignment.topCenter,
                                 child: Stack(
                                   children: <Widget>[
                                     Container(
-                                        height: 200.0,
+                                        height: 350.0,
                                           alignment:  Alignment.topLeft,
-                                          child: Text("Seja bem vindo!",
+                                          child: Text("Obrigado",
                                                   style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, fontFamily: 'constan'),
                                                   ),
                                           padding: const EdgeInsets.all(10.0),
                                    
                                           
                                       ),
-                                       Container(
-                                        height: 210.0,
+                                      Container(
+                                        height: 140.0,
                                           alignment:  Alignment.bottomLeft,
-                                          child: Text("__",
-                                                  style: TextStyle(fontSize: 30),
+                                          child: Text("Pela",
+                                                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, fontFamily: 'constan'),
                                                   ),
-                                          padding: const EdgeInsets.all(10.0)
+                                          padding: const EdgeInsets.all(10.0),
+                                   
+                                          
                                       ),
                                       Container(
-                                        height: 230.0,
+                                        height: 200.0,
                                           alignment:  Alignment.bottomLeft,
-                                          child: Text("MUSEU DE ARTE",
-                                                  style: TextStyle(fontSize: 13, fontFamily: 'constan'),
+                                          child: Text("Sua",
+                                                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, fontFamily: 'constan'),
                                                   ),
-                                          padding: const EdgeInsets.all(10.0)
+                                          padding: const EdgeInsets.all(10.0),
+                                   
+                                          
                                       ),
                                       Container(
-                                        height: 250.0,
+                                        height: 260.0,
                                           alignment:  Alignment.bottomLeft,
-                                          child: Text("ASSIS CHATEAUBRIAND",
-                                                  style: TextStyle(fontSize: 13, fontFamily: 'constan'),
+                                          child: Text("Visita!",
+                                                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, fontFamily: 'constan'),
                                                   ),
-                                          padding: const EdgeInsets.all(10.0)
-                                      )
+                                          padding: const EdgeInsets.all(10.0),
                     
-                                  
+                                      )   
                                   ],
                                 ),
                               )
                             ],
+                            
                           ),
-                        )
+                        ),
+                          floatingActionButtonLocation: 
+                  FloatingActionButtonLocation.centerFloat,
+                  floatingActionButton: Stack(
+                    children: <Widget>[
+                         Align(
+                          alignment: Alignment.bottomCenter,
+                          child:
+                            Container(
+                              height: 80.0,
+                              width: 80.0,
+                              
+                              child: FloatingActionButton(
+                                elevation: 20,
+                                backgroundColor: Color.fromRGBO(54, 54, 54, 50),
+                                child: Icon(
+                                  Icons.home,
+                                  size: 70,
+                                  
+                                  )
+                                ),
+                            
+                            ),
+                           
+                        ),
+                                       
+                      ],
+                  )
+                        
                     ),
         ),
       );

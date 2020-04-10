@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'pages/create_account.dart';
+// import 'pages/content.dart';
+import 'pages/splash.dart';
+import 'pages/splash_end.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget{
       
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: CreeatAccount(),
+        home: Splash_end(),
         routes: routes,
       );
   }
