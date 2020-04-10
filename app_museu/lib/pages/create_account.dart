@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 
 class CreeatAccount extends StatelessWidget {
+
+
+
   
   static String tag = 'create-account-page';
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
       debugShowCheckedModeBanner: false,
       home: Container(
         decoration: BoxDecoration(
@@ -25,24 +27,126 @@ class CreeatAccount extends StatelessWidget {
                 fit: BoxFit.cover)
                 
                 ),
-        child: Scaffold(
-          
+        child: Scaffold( 
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            title: Text('My App'),
-            centerTitle: true,
-            leading: IconButton(
-                icon: Icon(
-                  Icons.list,
-                  color: Colors.white,
+          
+          
+          body: Center(
+        child: ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.all(15.0),
+          children: <Widget>[
+            Center(
+              child: Container(
+                padding: EdgeInsets.all(10.0),
+                child: Column(
+                  children: <Widget>[
+                         TextField(
+                              decoration: InputDecoration(                              
+                              prefixIcon: Icon(Icons.person),
+                              labelText: "Nome",                   
+                              
+                            ),
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.phone),
+                              labelText: "Telefone",
+                            ),
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              // prefixIcon: Icon(Icons.person),
+                              labelText: "CEP",
+                            ),
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.streetview),
+                              labelText: "Endereço (Rua e numero)",
+                            ),
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.person),
+                              labelText: "Usuário",
+                            ),
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              // prefixIcon: Icon(Icons.person),
+                              labelText: "Bairro",
+                            ),
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              // prefixIcon: Icon(Icons.person),
+                              labelText: "Complemento",
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15.0,
+                          ),
+                          TextField(
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.person_add),
+                              labelText: "Usuário",
+                            ),
+                          ),
+                            TextField(
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.lock),
+                              labelText: "Senha",
+                            ),
+                          ),
+                            TextField(
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.lock),
+                              labelText: "Confirma Senha",
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15.0,
+                          ),
+                          Material(
+                            borderRadius: BorderRadius.circular(50.0),
+                            elevation: 5.0,
+                            child: MaterialButton(
+                              onPressed: () => {},
+                              minWidth: 150.0,
+                              height: 50.0,
+                              
+                              color: Color.fromRGBO(223, 173, 126, 1),
+                              child: Text(
+                                "Cadastrar",
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                  ]
                 ),
-                onPressed: () {}),
-          ),
+              ),
+            )
+          ],
         ),
-      ),
-    );
-  }
-}
+      ), 
+                           
+                  ),     
+                ),
+                
+               
+                    
+              );
+            }
+          
+            
+          
+           
+          }
+          
+
+
 
