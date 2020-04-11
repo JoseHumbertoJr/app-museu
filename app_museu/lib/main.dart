@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'pages/create_account.dart';
 
+import 'pages/home.dart';
+
+
 void main() => runApp(MyApp());
 
 final routes = <String, WidgetBuilder> {
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget{
       
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: CreeatAccount(),
+        home: LoginPage(),
         routes: routes,
       );
   }
