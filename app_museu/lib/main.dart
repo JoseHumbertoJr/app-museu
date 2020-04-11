@@ -3,6 +3,9 @@ import 'pages/content.dart';
 import 'pages/create_account.dart';
 import 'pages/search.dart';
 
+import 'pages/home.dart';
+
+
 void main() => runApp(MyApp());
 
 final routes = <String, WidgetBuilder> {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget{
       
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Search(),
+        home: LoginPage(),
         routes: routes,
       );
   }
