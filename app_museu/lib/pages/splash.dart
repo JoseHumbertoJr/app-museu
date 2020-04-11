@@ -1,14 +1,33 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:flutter/services.dart';
 
-void main() => runApp(Splash());
+class SplashPage extends StatefulWidget {
+  @override
+  Splashtate createState() => Splashtate();
+}
 
-class Splash extends StatelessWidget {
-  // This widget is the root of your application.
+class Splashtate  extends State<SplashPage> {
+  //////////////////////////////////
+  void navigationToNextPage() {
+    Navigator.pushReplacementNamed(context, '/HomePage');
+  }
+  ///////////////////////////////
+  startSplashScreenTimer() async {
+    var _duration = new Duration(seconds: 2);
+    return new Timer(_duration, navigationToNextPage);
+  }
+  ///////////////////////////////
+  @override
+  void initState() {
+    super.initState();
+    startSplashScreenTimer();
+  } 
+  //////////////////////////////
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Container(
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    return Container(
         decoration: BoxDecoration(
             color: const Color(0xffFFA751),
             gradient: LinearGradient(
@@ -80,8 +99,6 @@ class Splash extends StatelessWidget {
                           ),
                         )
                     ),
-        ),
-      );
+        );
   }
 }
-

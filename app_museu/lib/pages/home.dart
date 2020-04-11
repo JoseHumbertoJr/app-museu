@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class LoginPage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  LoginPageState createState() => LoginPageState();
+}
+
+class LoginPageState extends State<HomePage> {
+  static String tag = 'create-account-page';
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     return MaterialApp(
         title: 'Welcome to Flutter',
+        debugShowCheckedModeBanner: false,
         home: Container(
             decoration: BoxDecoration(
                 color: const Color(0xffFFA751),
