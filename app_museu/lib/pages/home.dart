@@ -147,7 +147,7 @@ class LoginPageState extends State<HomePage> {
                     Stack(
                       children: <Widget>[
                           Align(
-                          alignment: FractionalOffset(0.25, 0.99),
+                          alignment: FractionalOffset(0.20, 0.99),
                           child:  new FloatingActionButton(
                               heroTag: "btn6",
                               elevation: 20,
