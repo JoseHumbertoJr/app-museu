@@ -14,7 +14,7 @@ class Splashtate  extends State<SplashPage> {
   }
   ///////////////////////////////
   startSplashScreenTimer() async {
-    var _duration = new Duration(seconds: 2);
+    var _duration = new Duration(seconds: 4);
     return new Timer(_duration, navigationToNextPage);
   }
   ///////////////////////////////
@@ -57,17 +57,17 @@ class Splashtate  extends State<SplashPage> {
                                 child: Stack(
                                   children: <Widget>[
                                     Container(
-                                        height: 200.0,
+                                        height: 230.0,
                                           alignment:  Alignment.topLeft,
                                           child: Text("Seja bem vindo!",
-                                                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, fontFamily: 'constan'),
+                                                  style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold, fontFamily: 'constan'),
                                                   ),
                                           padding: const EdgeInsets.all(10.0),
                                    
                                           
                                       ),
                                        Container(
-                                        height: 210.0,
+                                        height: 240.0,
                                           alignment:  Alignment.bottomLeft,
                                           child: Text("__",
                                                   style: TextStyle(fontSize: 30),
@@ -75,7 +75,7 @@ class Splashtate  extends State<SplashPage> {
                                           padding: const EdgeInsets.all(10.0)
                                       ),
                                       Container(
-                                        height: 230.0,
+                                        height: 260.0,
                                           alignment:  Alignment.bottomLeft,
                                           child: Text("MUSEU DE ARTE",
                                                   style: TextStyle(fontSize: 13, fontFamily: 'constan'),
@@ -83,7 +83,7 @@ class Splashtate  extends State<SplashPage> {
                                           padding: const EdgeInsets.all(10.0)
                                       ),
                                       Container(
-                                        height: 250.0,
+                                        height: 280.0,
                                           alignment:  Alignment.bottomLeft,
                                           child: Text("ASSIS CHATEAUBRIAND",
                                                   style: TextStyle(fontSize: 13, fontFamily: 'constan'),

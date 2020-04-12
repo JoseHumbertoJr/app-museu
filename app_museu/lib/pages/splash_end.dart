@@ -20,7 +20,7 @@ class Splash_end extends StatelessWidget {
 
             ),
             image: DecorationImage(
-                image: AssetImage('assets/img/tela4.png'), 
+                image: AssetImage('assets/img/tela1.png'), 
                 colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.23), BlendMode.dstATop),
                 fit: BoxFit.cover)
                 

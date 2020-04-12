@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
+import 'home.dart';
+import 'home.dart';
+import 'search.dart';
+import 'search.dart';
+import 'search.dart';
+import 'splash_end.dart';
+import 'splash_end.dart';
 
-//void main() => runApp(Content());
+void main() => runApp(Content());
+
 
 class Content extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      debugShowCheckedModeBanner: false,
       home: Container(
         decoration: BoxDecoration(
             color: const Color(0xffFFA751),
@@ -18,7 +28,7 @@ class Content extends StatelessWidget {
 
             ),
             image: DecorationImage(
-                image: AssetImage('assets/img/tela4.png'), 
+                image: AssetImage('assets/img/tela1.png'), 
                 colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.23), BlendMode.dstATop),
                 fit: BoxFit.cover)
                 
@@ -45,16 +55,32 @@ class Content extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               
               children: <Widget>[
-                  Container(
-                     color: Colors.red[50],
+                Container(
+                  padding: const EdgeInsets.only(left: 40, right: 40, bottom: 50),
+
+                  child: Container(
+                     
                      width: 370,
                      height: 560,
                      padding: const EdgeInsets.all(10.0),
                      alignment:  Alignment.topCenter,
+                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(1.0),
+                      color: Colors.red[50],
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black54,
+                          offset: Offset(0.3, 7.0), //(x,y)
+                          blurRadius: 6.0,
+                        ),
+                      ],
+                    ),
+
+                    
                      child: Stack(
                        children: <Widget>[
                           Container(
-                              height: 410.0,
+                              height: 380.0,
                               alignment:  Alignment.bottomCenter,
                               padding: const EdgeInsets.all(10.0),
                               decoration: BoxDecoration(
@@ -65,20 +91,18 @@ class Content extends StatelessWidget {
                                   )
                               ),  
                             ),
-                            Container(
+                        
+                         Container(
                          alignment:  Alignment.bottomCenter,
                          child: Text("O Grito é a obra-prima do pintor norueguês Edvard Munch. Pintada pela primeira vez em 1893, a tela foi ganhando três novas versões com o passar do tempo. Historicamente a obra de Munch é classificada como iniciadora do expressionismo (um importante movimento modernista da primeira parte do século XX). As suas telas são densas e abordam temas difíceis como a solidão, a melancolia, a ansiedade e o medo.",
                          textAlign: TextAlign.center,
                         ), 
                        ),
 
-
                        ],
                      )
-                    
-                     
                     ),
-
+                      )
                     ],
                   ),
                 ),
@@ -95,11 +119,17 @@ class Content extends StatelessWidget {
                   floatingActionButton: Stack(
                     children: <Widget>[
                        Align(
-                          alignment: Alignment.bottomLeft,
-                          
-                          child: FloatingActionButton(
+                          alignment: FractionalOffset(0.02, 0.99),
+                          child: new FloatingActionButton(
+                            heroTag: "btn1",
+                            
                             elevation: 20,
+                            onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),
+                              );
+                            },
                             backgroundColor: Color.fromRGBO(54,54,54, 1),
+                            
                             child: Icon(
                               Icons.home,
                               size: 45,
@@ -114,9 +144,14 @@ class Content extends StatelessWidget {
                               height: 80.0,
                               width: 80.0,
                               
-                              child: FloatingActionButton(
+                              child: new FloatingActionButton(
+                                heroTag: "btn2",
+                                 onPressed: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => Search()),
+                                  );
+                                },
                                 elevation: 20,
-                                backgroundColor: Color.fromRGBO(54, 54, 54, 100.0),
+                                backgroundColor: Color.fromRGBO(54, 54, 54,1),
                                 child: Icon(
                                   Icons.search,
                                   size: 70,
@@ -129,8 +164,13 @@ class Content extends StatelessWidget {
                         ),
                        
                         Align(
-                          alignment: Alignment.bottomRight,
-                          child: FloatingActionButton(
+                          alignment: FractionalOffset(0.98, 0.99),
+                          child: new FloatingActionButton(
+                            heroTag: "btn3",
+                             onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => Splash_end()),
+                                );
+                              },
                             elevation: 90,
                             backgroundColor: Color.fromRGBO(54,54,54, 1),
                             child: Icon(Icons.close,

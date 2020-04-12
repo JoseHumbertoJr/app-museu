@@ -15,7 +15,6 @@ class LoginPageState extends State<HomePage> {
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     return MaterialApp(
-        title: 'Welcome to Flutter',
         debugShowCheckedModeBanner: false,
         home: Container(
             decoration: BoxDecoration(
@@ -28,7 +27,7 @@ class LoginPageState extends State<HomePage> {
                       Color.fromRGBO(255, 233, 174, 1)
                     ]),
                 image: DecorationImage(
-                    image: AssetImage('assets/img/tela4.png'),
+                    image: AssetImage('assets/img/tela3.png'),
                     colorFilter: new ColorFilter.mode(
                         Colors.black.withOpacity(0.23), BlendMode.dstATop),
                     fit: BoxFit.cover)),
@@ -44,14 +43,9 @@ class LoginPageState extends State<HomePage> {
                       child: Image.asset("assets/img/museu.png"),
                     ),
                     SizedBox(
-                      height: 20,
+                      height:90,
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
+
                     Container(
                       height: 60,
                       alignment: Alignment.centerLeft,
@@ -91,14 +85,14 @@ class LoginPageState extends State<HomePage> {
                           },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
-                              side: BorderSide(color: Colors.black)),
+                              ),
                               color:Color.fromRGBO(255, 255, 255, 1),
                           
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                     Container(
                       height: 60,
@@ -114,8 +108,10 @@ class LoginPageState extends State<HomePage> {
                           ],
                         ),
                       ),
+
                       child: SizedBox.expand(
                         child: FlatButton(
+                        
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
@@ -136,14 +132,79 @@ class LoginPageState extends State<HomePage> {
                               MaterialPageRoute(builder: (context) => CreeatAccount()),
                             );
                           },
+                      
                           shape: RoundedRectangleBorder(
+
                               borderRadius: BorderRadius.circular(20),
-                              side: BorderSide(color: Colors.black)),
+                              side: BorderSide(color: Colors.black87)),
                         ),
                       ),
                     ),
                     SizedBox(
                       height: 10,
+                    ),
+                    //Feito por: Emerson, se for remover, remova APENAS essa parte
+                    Stack(
+                      children: <Widget>[
+                          Align(
+                          alignment: FractionalOffset(0.25, 0.99),
+                          child:  new FloatingActionButton(
+                              heroTag: "btn6",
+                              elevation: 20,
+                              onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),
+                                );
+                              },
+                              backgroundColor: Color.fromRGBO(255,255,255 , 1),
+                              
+                              child: Container(
+                                alignment:  Alignment.bottomCenter,
+                                padding: const EdgeInsets.all(10.0),
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                    image: AssetImage('assets/img/f_logo.png'), 
+                                    alignment: Alignment.topCenter, 
+                                    fit: BoxFit.fitHeight   
+                                    )
+                                ),  
+                              ),
+                        
+                        ),
+                        ),
+
+                       Align(
+                          alignment: FractionalOffset(0.80, 0.99),
+                          child:
+                            Container(
+                             child: new FloatingActionButton(
+                              heroTag: "btn5",
+                              elevation: 20,
+                              onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),
+                                );
+                              },
+                              backgroundColor: Color.fromRGBO(255,255,255 , 1),
+                              child: Container(
+                                height:40,
+                                alignment:  Alignment.bottomCenter,
+                                
+                                decoration: BoxDecoration(
+                                    
+                                    image: DecorationImage(
+                                    image: AssetImage('assets/img/g_logo.png'), 
+                                    alignment: Alignment.topCenter, 
+                                    fit: BoxFit.fitHeight   
+                                    )
+                                ),  
+                              ),
+                        ),
+                            
+                            ),
+                           
+                        ),
+
+                      ],
+
                     ),
                   ],
                 ),

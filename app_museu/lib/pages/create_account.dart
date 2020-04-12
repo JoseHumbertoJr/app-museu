@@ -45,14 +45,14 @@ class CreeatAccount extends StatelessWidget {
                   children: <Widget>[
                          TextField(
                               decoration: InputDecoration(                              
-                              prefixIcon: Icon(Icons.person),
+                              //prefixIcon: Icon(Icons.person),
                               labelText: "Nome",                   
                               
                             ),
                           ),
                           TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.phone),
+                              //prefixIcon: Icon(Icons.phone),
                               labelText: "Telefone",
                             ),
                           ),
@@ -64,13 +64,13 @@ class CreeatAccount extends StatelessWidget {
                           ),
                           TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.streetview),
+                              //prefixIcon: Icon(Icons.streetview),
                               labelText: "Endereço (Rua e numero)",
                             ),
                           ),
                           TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.person),
+                              //prefixIcon: Icon(Icons.person),
                               labelText: "Usuário",
                             ),
                           ),
@@ -91,19 +91,19 @@ class CreeatAccount extends StatelessWidget {
                           ),
                           TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.person_add),
+                              //prefixIcon: Icon(Icons.person_add),
                               labelText: "Usuário",
                             ),
                           ),
                             TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.lock),
+                              //prefixIcon: Icon(Icons.lock),
                               labelText: "Senha",
                             ),
                           ),
                             TextField(
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.lock),
+                              //prefixIcon: Icon(Icons.lock),
                               labelText: "Confirma Senha",
                             ),
                           ),
@@ -121,12 +121,11 @@ class CreeatAccount extends StatelessWidget {
                               minWidth: 150.0,
                               height: 50.0,
 
-                              color: Color.fromRGBO(223, 173, 126, 1),
                               child: Text(
                                 "Cadastrar",
                                 style: TextStyle(
                                   fontSize: 16.0,
-                                  color: Colors.white,
+                                  color: Colors.black,
                                 ),
                               ),
                             ),

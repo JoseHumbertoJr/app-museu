@@ -40,7 +40,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-     - assets/img/fb_logo.png
+     - assets/img/f_logo.png
+     - assets/img/g_logo.png
      - assets/img/museu.png
      - assets/img/tela1.png
      - assets/img/tela2.png

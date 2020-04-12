@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'content.dart';
 
 void main() => runApp(Search());
@@ -39,6 +38,22 @@ class Search extends StatelessWidget {
                                 padding: const EdgeInsets.all(10.0),
                                 alignment:  Alignment.topCenter,
                                 child:
+
+                                    FloatingActionButton(
+                                  elevation: 20,
+                                  backgroundColor: Color.fromRGBO(54,54,54, 1),
+                                    onPressed: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => Content()),
+                                );
+                              },
+                                  child: Icon(
+                                    Icons.home,
+                                    size: 45,
+                                    )
+                                  ),
+
+
+/*
                                   IconButton(
                                     icon: const Icon(Icons.search),
                                     onPressed:() {
@@ -48,7 +63,7 @@ class Search extends StatelessWidget {
                                     },
                                     iconSize: 100.0,
                                     color: const Color(0xFF000000),
-                                  ),                       
+                                  ),   */                    
                               ),
                             ],
                           ),
