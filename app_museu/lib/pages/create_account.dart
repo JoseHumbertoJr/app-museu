@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 
 class CreeatAccount extends StatelessWidget {
 
@@ -112,7 +114,10 @@ class CreeatAccount extends StatelessWidget {
                             borderRadius: BorderRadius.circular(50.0),
                             elevation: 5.0,
                             child: MaterialButton(
-                              onPressed: () => {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),
+                                );
+                              },
                               minWidth: 150.0,
                               height: 50.0,
 
