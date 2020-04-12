@@ -10,6 +10,7 @@ class Search extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to Flutter',
+      debugShowCheckedModeBanner: false,
       home: Container(
         decoration: BoxDecoration(
             color: const Color(0xffFFA751),
@@ -38,9 +39,13 @@ class Search extends StatelessWidget {
                                 padding: const EdgeInsets.all(10.0),
                                 alignment:  Alignment.topCenter,
                                 child:
-                                  new IconButton(
+                                  IconButton(
                                     icon: const Icon(Icons.search),
-                                    onPressed:() => {},
+                                    onPressed:() {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                                        return Content();
+                                      }));
+                                    },
                                     iconSize: 100.0,
                                     color: const Color(0xFF000000),
                                   ),                       
@@ -54,4 +59,5 @@ class Search extends StatelessWidget {
         ),
       );
   }
+  
 }

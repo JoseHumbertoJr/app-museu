@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 void main() => runApp(Splash_end());
 
 class Splash_end extends StatelessWidget {
@@ -96,6 +98,11 @@ class Splash_end extends StatelessWidget {
                               
                               child: FloatingActionButton(
                                 elevation: 20,
+                                onPressed: (){                           
+                                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                                    return HomePage();
+                                  }));
+                                },
                                 backgroundColor: Color.fromRGBO(54, 54, 54, 50),
                                 child: Icon(
                                   Icons.home,

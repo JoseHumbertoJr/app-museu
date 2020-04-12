@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'create_account.dart';
+import 'search.dart';
+
 class HomePage extends StatefulWidget {
   @override
   LoginPageState createState() => LoginPageState();
@@ -13,6 +16,7 @@ class LoginPageState extends State<HomePage> {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     return MaterialApp(
         title: 'Welcome to Flutter',
+        debugShowCheckedModeBanner: false,
         home: Container(
             decoration: BoxDecoration(
                 color: const Color(0xffFFA751),
@@ -79,7 +83,12 @@ class LoginPageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Search()),
+                            );
+                          },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                               side: BorderSide(color: Colors.black)),
@@ -121,7 +130,12 @@ class LoginPageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => CreeatAccount()),
+                            );
+                          },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                               side: BorderSide(color: Colors.black)),

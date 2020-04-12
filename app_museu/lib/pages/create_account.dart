@@ -109,22 +109,19 @@ class CreeatAccount extends StatelessWidget {
                             height: 15.0,
                           ),
                           Material(
-                            //borderRadius: BorderRadius.circular(50.0),
-                            elevation: 20.0,
+                            borderRadius: BorderRadius.circular(50.0),
+                            elevation: 5.0,
                             child: MaterialButton(
                               onPressed: () => {},
                               minWidth: 150.0,
                               height: 50.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0),
-                                side: BorderSide(color: Colors.black) 
-                              ),
-                              color: Color.fromRGBO(255, 255, 255, 100),
+
+                              color: Color.fromRGBO(223, 173, 126, 1),
                               child: Text(
                                 "Cadastrar",
                                 style: TextStyle(
                                   fontSize: 16.0,
-                                  color: Colors.black,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
