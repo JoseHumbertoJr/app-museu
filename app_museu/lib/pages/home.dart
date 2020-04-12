@@ -13,7 +13,6 @@ class LoginPageState extends State<HomePage> {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     return MaterialApp(
         title: 'Welcome to Flutter',
-        debugShowCheckedModeBanner: false,
         home: Container(
             decoration: BoxDecoration(
                 color: const Color(0xffFFA751),
@@ -56,10 +55,10 @@ class LoginPageState extends State<HomePage> {
                         gradient: LinearGradient(
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          stops: [0.3, 1],
+                         
                           colors: [
-                            Color.fromRGBO(255, 255, 255, 1),
-                            Color.fromRGBO(255, 255, 255, 1),
+                            Color.fromRGBO(255, 255, 255, 0),
+                            Color.fromRGBO(255, 255, 255, 0),
                           ],
                         ),
                        
@@ -84,6 +83,8 @@ class LoginPageState extends State<HomePage> {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                               side: BorderSide(color: Colors.black)),
+                              color:Color.fromRGBO(255, 255, 255, 1),
+                          
                         ),
                       ),
                     ),
