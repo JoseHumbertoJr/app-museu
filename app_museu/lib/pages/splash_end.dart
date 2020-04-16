@@ -9,6 +9,7 @@ class Splash_end extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Welcome to Flutter',
       home: Container(
         decoration: BoxDecoration(
