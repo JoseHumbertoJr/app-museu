@@ -1,14 +1,89 @@
+import 'dart:math';
+import 'dart:async';
+import 'package:app_museu/pages/content.dart';
 import 'package:flutter/material.dart';
-import 'content.dart';
 
-void main() => runApp(Search());
+class SpritePainter extends CustomPainter {
+  final Animation<double> _animation;
 
-class Search extends StatelessWidget {
-  // This widget is the root of your application.
+  SpritePainter(this._animation) : super(repaint: _animation);
+
+  void circle(Canvas canvas, Rect rect, double value) {
+    double opacity = (1.0 - (value / 4.0)).clamp(0.0, 1.0);
+    Color color = new Color.fromRGBO(54, 54, 54, opacity);
+
+    double size = rect.width / 2;
+    double area = size * size;
+    double radius = sqrt(area * value / 4);
+
+    final Paint paint = new Paint()..color = color;
+    canvas.drawCircle(rect.center, radius, paint);
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Rect rect = new Rect.fromLTRB(0.0, 0.0, size.width, size.height);
+    for (int wave = 3; wave >= 0; wave--) {
+      circle(canvas, rect, wave + _animation.value);
+    }
+  }
+
+  @override
+  bool shouldRepaint(SpritePainter newDelegate) {
+    return true;
+  }
+}
+
+class Search extends StatefulWidget {
+
+  @override
+  SearchState createState() => new SearchState();
+}
+
+class SearchState extends State<Search>
+    with SingleTickerProviderStateMixin {
+      
+  AnimationController _controller;
+
+  startContentScreenTimer() async {
+    var _duration = new Duration(seconds: 4);
+    return new Timer(_duration, navigationToNextPage);
+  }
+
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = new AnimationController(
+      vsync: this,
+    );
+
+  
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+   void navigationToNextPage() {
+    Navigator.push(context,  MaterialPageRoute(builder: (context) => Content()));
+  }
+
+  void _startAnimation() {
+     startContentScreenTimer();
+    _controller.stop();
+    _controller.reset();
+    _controller.repeat(
+      period: Duration(seconds: 1),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
-      title: 'Welcome to Flutter',
       debugShowCheckedModeBanner: false,
       home: Container(
         decoration: BoxDecoration(
@@ -25,54 +100,43 @@ class Search extends StatelessWidget {
                 fit: BoxFit.cover)
                 
                 ),
-                  child: Scaffold(
-                     backgroundColor: Colors.transparent,
-                      body: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Container(
-                              color: Colors.transparent,
-                                width: 250,
-                                height: 150,
-                                padding: const EdgeInsets.all(10.0),
-                                alignment:  Alignment.topCenter,
-                                child:
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+            body: new CustomPaint(
+              painter: new SpritePainter(_controller),
+              child: new SizedBox(
+                width: 800.0,
+                height: 1000.0,
+              ),
 
-                                    FloatingActionButton(
-                                  elevation: 20,
-                                  backgroundColor: Color.fromRGBO(54,54,54, 1),
-                                    onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => Content()),
-                                );
-                              },
-                                  child: Icon(
-                                    Icons.home,
-                                    size: 45,
-                                    )
-                                  ),
+            ),
 
-
-/*
-                                  IconButton(
-                                    icon: const Icon(Icons.search),
-                                    onPressed:() {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                                        return Content();
-                                      }));
-                                    },
-                                    iconSize: 100.0,
-                                    color: const Color(0xFF000000),
-                                  ),   */                    
-                              ),
-                            ],
-                          ),
-                        ),
-         
-                    ),
-                    
+            floatingActionButton: 
+              Align(
+                alignment: FractionalOffset(0.55, 0.53),
+                  child: Container(
+                      height: 90.0,
+                      width: 90.0,
+                    child:FloatingActionButton(
+                      backgroundColor: Color.fromRGBO(54, 54, 54,1),
+                      onPressed:  _startAnimation,
+                      child: new Icon(Icons.search,
+                                      size: 60,
+                                      ),
+                      
+                   ),  
+                  )
+                  
+                  
+                  
+            )
+             
         ),
-      );
+      ),
+    
+    
+    );
   }
-  
 }
+
+void main() => runApp(Search());
