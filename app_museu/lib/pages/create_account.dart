@@ -1,7 +1,15 @@
+import 'package:app_museu/service/visitant_service.dart';
 import 'package:flutter/material.dart';
 
-class CreeatAccount extends StatelessWidget {
+class CreeatAccount extends StatefulWidget {
   static String tag = 'create-account-page';
+
+  @override
+  _CreeatAccountState createState() => _CreeatAccountState();
+}
+
+class _CreeatAccountState extends State<CreeatAccount> {
+  VisitantService visitantService = new VisitantService();
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +120,18 @@ class CreeatAccount extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50.0),
                         elevation: 5.0,
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            visitantService.createVisitant(
+                              _cNome.text,
+                              _cPhone.text,
+                              _cCep.text,
+                              _cAdress.text,
+                              _cLocale.text,
+                              _cComplement.text,
+                              _cUser.text,
+                              _cPassword.text,
+                            );
+                          },
                           minWidth: 150.0,
                           height: 50.0,
                           child: Text(

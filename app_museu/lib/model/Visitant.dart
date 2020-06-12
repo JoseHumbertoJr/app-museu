@@ -33,4 +33,15 @@ class Visitant {
       password: json['password'] as String,
     );
   }
+
+  Map<String, dynamic> toJson() => {
+        'nome': this.nome,
+        'phone': this.phone,
+        'cep': this.cep,
+        'adress': this.adress,
+        'locale': this.locale,
+        'complement': this.complement,
+        'user': this.user,
+        'password': this.password,
+      };
 }

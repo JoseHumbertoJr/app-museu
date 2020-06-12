@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:app_museu/model/Visitant.dart';
 import 'package:http/http.dart' as http;
 
-class HttpService {
+class VisitantService {
   final String appMuseuUrl =
       "https://museum-web-service.herokuapp.com/visitantes";
 
@@ -20,7 +20,7 @@ class HttpService {
     final http.Response response = await http.post(
       appMuseuUrl,
       headers: <String, String>{
-        'Content-Type': 'application/json; charset=UTF-8'
+        'Content-Type': 'application/json; charset=UTF-8',
       },
       body: jsonEncode(<String, String>{
         'nome': nome,
@@ -33,10 +33,11 @@ class HttpService {
         'password': password,
       }),
     );
+
     if (response.statusCode == 201) {
       return Visitant.fromJson(json.decode(response.body));
     } else {
-      throw Exception('Failed to load album');
+      throw Exception('Failed to create Visitant.');
     }
   }
 }
